@@ -1,4 +1,4 @@
-package main
+package utils
 
 func copySlice[T interface{}](v []T) []T {
 	tmp := make([]T, len(v))
@@ -23,7 +23,7 @@ func sliceDiff[T comparable](a []T, b []T) []T {
 	return res
 }
 
-//TODO replace with binary search
+// TODO replace with binary search
 func searchInSlice[T comparable](needle T, haystack []T) int {
 	for i := range haystack {
 		if haystack[i] == needle {
