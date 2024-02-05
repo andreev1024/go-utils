@@ -1,13 +1,13 @@
 package utils
 
-func copySlice[T interface{}](v []T) []T {
+func CopySlice[T interface{}](v []T) []T {
 	tmp := make([]T, len(v))
 	copy(tmp, v)
 	return tmp
 }
 
 // TODO optimization
-func sliceDiff[T comparable](a []T, b []T) []T {
+func SliceDiff[T comparable](a []T, b []T) []T {
 	set := make(map[T]struct{})
 	for i, max := 0, len(b); i < max; i++ {
 		set[b[i]] = struct{}{}
@@ -24,7 +24,7 @@ func sliceDiff[T comparable](a []T, b []T) []T {
 }
 
 // TODO replace with binary search
-func searchInSlice[T comparable](needle T, haystack []T) int {
+func SearchInSlice[T comparable](needle T, haystack []T) int {
 	for i := range haystack {
 		if haystack[i] == needle {
 			return i
@@ -33,7 +33,7 @@ func searchInSlice[T comparable](needle T, haystack []T) int {
 	return -1
 }
 
-func isIndexExist[T interface{}](index int, slice []T) bool {
+func IsIndexExist[T interface{}](index int, slice []T) bool {
 	return index >= 0 && index < len(slice)
 }
 

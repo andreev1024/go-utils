@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"reflect"
 	"testing"
+
+	u "github.com/andreev1024/go-utils"
 )
 
 func TestSliceDiff(t *testing.T) {
@@ -20,7 +22,7 @@ func TestSliceDiff(t *testing.T) {
 
 	for i := range intTests {
 		t.Run(fmt.Sprintf("int test %d", i), func(t *testing.T) {
-			if !reflect.DeepEqual(sliceDiff(intTests[i].a, intTests[i].b), intTests[i].expected) {
+			if !reflect.DeepEqual(u.SliceDiff(intTests[i].a, intTests[i].b), intTests[i].expected) {
 				t.Error("Test failed")
 			}
 		})
@@ -36,7 +38,7 @@ func TestSliceDiff(t *testing.T) {
 
 	for i := range stringTests {
 		t.Run(fmt.Sprintf("string test %d", i), func(t *testing.T) {
-			if !reflect.DeepEqual(sliceDiff(stringTests[i].a, stringTests[i].b), stringTests[i].expected) {
+			if !reflect.DeepEqual(u.SliceDiff(stringTests[i].a, stringTests[i].b), stringTests[i].expected) {
 				t.Error("Test failed")
 			}
 		})
