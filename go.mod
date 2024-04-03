@@ -1,3 +1,3 @@
 module github.com/andreev1024/go-utils
 
-go 1.21.6
+go 1.22.0
